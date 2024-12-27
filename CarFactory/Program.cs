@@ -20,6 +20,12 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.RegisterCoreApplication();
 builder.Services.RegisterInfrastructurePersistence();
 
+builder.Services.AddMiniProfiler(options =>
+{
+    options.RouteBasePath = "/profiler";
+    options.ShouldProfile = _ => true;
+});
+
 
 var app = builder.Build();
 
@@ -29,7 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseMiniProfiler();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

@@ -3,6 +3,7 @@ using CarFactory.Core.Application.Exceptions;
 using CarFactory.Core.Application.Interfaces;
 using CarFactory.Core.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using StackExchange.Profiling;
 
 namespace CarFactory.WebApi.Controllers
 {
